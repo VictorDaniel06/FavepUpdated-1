@@ -1,0 +1,683 @@
+/* ESTILOS PARA O NOVO BOTÃO DE ATIVAR/DESATIVAR */
+.btn-toggle-status {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem; /* Tamanho da fonte do texto 'Ativa'/'Inativa' */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  display: inline-flex; /* Para alinhar ícone e texto */
+  align-items: center;
+  gap: 0.5rem; /* Espaço entre o ícone e o texto */
+  min-width: 100px; /* Largura mínima para acomodar o texto e ícone */
+  justify-content: center; /* Centraliza o conteúdo do botão */
+  font-weight: 500;
+}
+
+.btn-toggle-status .fas { /* Estilo para o ícone dentro do botão */
+  font-size: 1.2rem; /* Tamanho do ícone de toggle */
+  line-height: 1; /* Ajuste para melhor alinhamento vertical do ícone */
+}
+
+.btn-toggle-status.ativo {
+  background-color: #27ae60; /* Verde (cor de sucesso/ativo) */
+  color: white;
+}
+
+.btn-toggle-status.ativo:hover {
+  background-color: #219653; /* Verde um pouco mais escuro no hover */
+}
+
+.btn-toggle-status.inativo {
+  background-color: #e74c3c; /* Vermelho (cor de perigo/inativo) */
+  color: white;
+}
+
+.btn-toggle-status.inativo:hover {
+  background-color: #c0392b; /* Vermelho um pouco mais escuro no hover */
+}
+
+/* ---------------------------------------------------- */
+/* GRID PRINCIPAL DO DASHBOARD */
+/* ---------------------------------------------------- */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  overflow: hidden;
+  /* A cor de fundo do container é aplicada no .main-content agora */
+}
+
+/* ---------------------------------------------------- */
+/* CABEÇALHO DO DASHBOARD */
+/* ---------------------------------------------------- */
+.dashboard-header {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Merriweather', serif;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-logo-img { /* Logo no header */
+  height: 3.5rem; /* Define a altura da imagem. Ajuste este valor conforme necessário. */
+  width: auto;    /* Mantém a proporção da imagem. */
+}
+
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  white-space: nowrap;
+}
+
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #27ae60;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: none;
+}
+
+
+/* ---------------------------------------------------- */
+/* MENU LATERAL PRINCIPAL */
+/* ---------------------------------------------------- */
+.main-menu {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: #34495e;
+  color: white;
+  padding: 20px 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  z-index: 90;
+}
+
+.main-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.main-menu a:hover {
+  background-color: #2c3e50;
+}
+
+.main-menu .material-symbols-outlined {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+/* ---------------------------------------------------- */
+/* CONTEÚDO PRINCIPAL */
+/* ---------------------------------------------------- */
+.main-content {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 2rem;
+  background-color: #f4f7f6;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* ---------------------------------------------------- */
+/* BARRA DE NAVEGAÇÃO INTERNA */
+/* ---------------------------------------------------- */
+.main-nav {
+  display: flex;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-top: 0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.main-nav button {
+  flex: 1;
+  min-width: 120px;
+  padding: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.main-nav button:hover {
+  color: #2c3e50;
+  background-color: #f8f9fa;
+}
+
+.main-nav button.active {
+  color: #27ae60;
+  border-bottom: 3px solid #27ae60;
+  font-weight: 600;
+  background-color: #eaf7ed;
+}
+
+.main-nav button i {
+  font-size: 1.1rem;
+}
+
+/* ---------------------------------------------------- */
+/* TOOLBAR, FILTROS, BOTÕES */
+/* ---------------------------------------------------- */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filtros {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filtro-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filtro-group label {
+  font-weight: 500;
+  color: #2c3e50;
+  transition: color 0.3s ease-in-out;
+}
+
+.filtro-group select,
+.search-group input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+}
+
+.search-group input {
+  border-radius: 4px 0 0 4px;
+  width: 200px;
+}
+
+.btn-search {
+  padding: 0.5rem 0.75rem;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-search:hover {
+  background-color: #219653;
+}
+
+.btn-add {
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.btn-add:hover {
+  background-color: #2980b9;
+}
+
+/* ---------------------------------------------------- */
+/* CARTÕES DE RESUMO */
+/* ---------------------------------------------------- */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.summary-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.summary-card h3 {
+  margin-top: 0;
+  color: #7f8c8d;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.summary-card .value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0;
+  color: #2c3e50;
+  transition: color 0.3s ease-in-out;
+}
+
+.summary-card .positivo {
+  color: #27ae60;
+}
+
+.summary-card .negativo {
+  color: #e74c3c;
+}
+
+/* ---------------------------------------------------- */
+/* TABELAS */
+/* ---------------------------------------------------- */
+.table-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  transition: background-color 0.3s ease-in-out;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  transition: border-color 0.3s ease-in-out;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+tr {
+  transition: background-color 0.3s ease-in-out;
+}
+
+tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Tags, Badges, etc. */
+.tag { display: inline-block; background-color: #e8f4fd; color: #3498db; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; margin-bottom: 0.25rem; transition: background-color 0.3s, color 0.3s; }
+.badge { display: inline-block; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-weight: 500; transition: background-color 0.3s, color 0.3s; }
+.badge.receita { background-color: #e8f8f0; color: #27ae60; }
+.badge.despesa { background-color: #fde8e8; color: #e74c3c; }
+.positivo { color: #27ae60; }
+.negativo { color: #e74c3c; }
+.actions { display: flex; gap: 0.5rem; align-items: center; }
+
+.btn-edit, .btn-delete {
+    padding: 0.5rem; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;
+    transition: opacity 0.3s, background-color 0.3s; display: inline-flex; align-items: center; justify-content: center;
+}
+.btn-edit i, .btn-delete i { font-size: 1rem; }
+.btn-edit { background-color: #f0f7ff; color: #3498db; }
+.btn-edit:hover { background-color: #ddeeff; opacity: 1; }
+.btn-delete { background-color: #fef0f0; color: #e74c3c; }
+.btn-delete:hover { background-color: #fee0e0; opacity: 1; }
+
+/* ---------------------------------------------------- */
+/* MODAIS */
+/* ---------------------------------------------------- */
+.modal {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);
+  display: flex; justify-content: center; align-items: center; z-index: 1000;
+}
+.modal-content {
+  background-color: white; border-radius: 8px; width: 90%; max-width: 600px; max-height: 90vh;
+  overflow-y: auto; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); padding: 2rem; position: relative;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.close { position: absolute; top: 1rem; right: 1rem; font-size: 1.5rem; cursor: pointer; color: #7f8c8d; transition: color 0.3s; }
+.close:hover { color: #e74c3c; }
+
+/* ---------------------------------------------------- */
+/* FORMULÁRIOS NO MODAL */
+/* ---------------------------------------------------- */
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: #2c3e50; transition: color 0.3s ease-in-out; }
+.form-group input, .form-group select {
+    width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.form-actions { display: flex; justify-content: flex-end; gap: 1rem; margin-top: 2rem; }
+.btn-cancel, .btn-save, .btn-confirm { padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; transition: all 0.3s; }
+.btn-cancel { background-color: #f8f9fa; color: #7f8c8d; }
+.btn-cancel:hover { background-color: #e9ecef; }
+.btn-save, .btn-confirm { background-color: #27ae60; color: white; }
+.btn-save:hover, .btn-confirm:hover { background-color: #219653; }
+
+
+/* =================================================================== */
+/* ==== TEMA ESCURO PARA CONTEÚDO (SOBRESCRITAS DE ESTILO) ========= */
+/* A classe .content-dark-theme é aplicada no .dashboard-container     */
+/* =================================================================== */
+
+.content-dark-theme .main-content {
+  background-color: #1e2730;
+  color: #e0e6eb;
+}
+
+/* Barra de Navegação Interna */
+.content-dark-theme .main-nav {
+  background-color: #2c3e50;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.content-dark-theme .main-nav button {
+  color: #98a6b9;
+}
+.content-dark-theme .main-nav button:hover {
+  color: #e0e6eb;
+  background-color: #34495e;
+}
+.content-dark-theme .main-nav button.active {
+  color: #2ecc71;
+  border-bottom: 3px solid #2ecc71;
+  background-color: rgba(46, 204, 113, 0.15);
+}
+
+/* Toolbar e Filtros */
+.content-dark-theme .filtro-group label {
+  color: #e0e6eb;
+}
+.content-dark-theme .filtro-group select,
+.content-dark-theme .search-group input {
+  border-color: #4a5568;
+  background-color: #2c3e50;
+  color: #e0e6eb;
+}
+.content-dark-theme .btn-search {
+  background-color: #2ecc71;
+}
+.content-dark-theme .btn-search:hover {
+  background-color: #27ae60;
+}
+.content-dark-theme .btn-add {
+  background-color: #5dade2;
+}
+.content-dark-theme .btn-add:hover {
+  background-color: #4b9ed1;
+}
+
+/* Cards de Resumo */
+.content-dark-theme .summary-card {
+  background-color: #2c3e50;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+.content-dark-theme .summary-card h3 {
+  color: #98a6b9;
+}
+.content-dark-theme .summary-card .value {
+  color: #e0e6eb;
+}
+.content-dark-theme .summary-card .positivo {
+  color: #2ecc71;
+}
+.content-dark-theme .summary-card .negativo {
+  color: #ff7667;
+}
+
+/* Tabelas */
+.content-dark-theme .table-container {
+  background-color: #2c3e50;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+.content-dark-theme th,
+.content-dark-theme td {
+  border-bottom-color: #3e4c5b;
+}
+.content-dark-theme th {
+  background-color: #34495e;
+  color: #e0e6eb;
+}
+.content-dark-theme tr:hover {
+  background-color: #34495e;
+}
+
+/* Tags, Badges na tabela */
+.content-dark-theme .tag {
+  background-color: rgba(52, 152, 219, 0.15);
+  color: #5dade2;
+}
+.content-dark-theme .badge.receita {
+  background-color: rgba(46, 204, 113, 0.15);
+  color: #2ecc71;
+}
+.content-dark-theme .badge.despesa {
+  background-color: rgba(255, 118, 103, 0.15);
+  color: #ff7667;
+}
+.content-dark-theme .positivo {
+  color: #2ecc71;
+}
+.content-dark-theme .negativo {
+  color: #ff7667;
+}
+
+/* Botões de Ação na Tabela */
+.content-dark-theme .btn-edit {
+  background-color: rgba(93, 173, 226, 0.15);
+  color: #5dade2;
+}
+.content-dark-theme .btn-edit:hover {
+  background-color: rgba(93, 173, 226, 0.25);
+}
+.content-dark-theme .btn-delete {
+  background-color: rgba(231, 76, 60, 0.15);
+  color: #ff7667;
+}
+.content-dark-theme .btn-delete:hover {
+  background-color: rgba(231, 76, 60, 0.25);
+}
+
+/* Modais */
+.content-dark-theme .modal-content {
+  background-color: #2c3e50;
+  color: #e0e6eb;
+}
+.content-dark-theme .close {
+  color: #98a6b9;
+}
+.content-dark-theme .close:hover {
+  color: #ff7667;
+}
+
+/* Formulários no Modal */
+.content-dark-theme .form-group label {
+  color: #e0e6eb;
+}
+.content-dark-theme .form-group input,
+.content-dark-theme .form-group select {
+  background-color: #1e2730;
+  border-color: #4a5568;
+  color: #e0e6eb;
+}
+.content-dark-theme .btn-cancel {
+  background-color: transparent;
+  color: #98a6b9;
+  border-color: #4a5568;
+}
+.content-dark-theme .btn-cancel:hover {
+  background-color: #34495e;
+}
+.content-dark-theme .btn-save,
+.content-dark-theme .btn-confirm {
+  background-color: #2ecc71;
+}
+.content-dark-theme .btn-save:hover,
+.content-dark-theme .btn-confirm:hover {
+  background-color: #27ae60;
+}
+
+
+/* ---------------------------------------------------- */
+/* RESPONSIVIDADE */
+/* ---------------------------------------------------- */
+@media (max-width: 992px) {
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+  .dashboard-header i { /* Ícone do trator no header */
+    font-size: 2rem;
+  }
+  .user-info span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    transform: translateX(-100%);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    padding-top: 80px; /* Altura do cabeçalho */
+    box-sizing: border-box;
+  }
+
+  .main-menu.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    grid-column: 1;
+    padding: 1rem;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .filtros {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-group input {
+    width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0; /* Remove gap para que o margin-bottom do form-group funcione */
+  }
+  .form-row .form-group {
+    margin-bottom: 1rem; /* Adiciona margem inferior em telas menores */
+  }
+
+
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+  .dashboard-header i { /* Ícone do trator no header */
+    font-size: 1.5rem;
+  }
+  .user-info span {
+    display: none;
+  }
+  .dashboard-header {
+    padding: 1rem;
+  }
+  .main-menu a {
+    padding: 12px 15px;
+  }
+  .main-nav button {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+  }
+  .main-nav button i {
+    font-size: 1rem; /* Ajusta ícone da navegação interna */
+  }
+}

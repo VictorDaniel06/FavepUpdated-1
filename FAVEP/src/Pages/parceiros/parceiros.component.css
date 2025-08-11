@@ -1,0 +1,232 @@
+/* PAINEL SUPERIOR DA PÁGINA DE PARCEIROS */
+.parceiros-painel {
+  background: url("/assets/img/fundo.jpg") no-repeat center center/cover;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-on-dark-bg);
+  text-align: center;
+  position: relative;
+}
+
+.parceiros-painel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.parceiros-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 30px;
+  background: var(--bg-overlay);
+  border-radius: 8px;
+}
+
+.parceiros-overlay h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+}
+
+.parceiros-overlay p {
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* SEÇÃO PRINCIPAL COM OS CARDS DE PARCEIROS */
+.parceiros-section {
+  padding: 50px 20px;
+  background-color: var(--bg-main);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col-lg-6, .col-md-12 {
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+
+.partner-card {
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.partner-card-header {
+  padding: 15px;
+  background-color: var(--border-color-img);
+  text-align: center;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-logo {
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.partner-card-body {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--text-headings);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.partner-description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.partner-contact-info,
+.partner-social-media {
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+
+.partner-contact-info h4,
+.partner-social-media h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--action-color);
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.list-unstyled,
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.partner-contact-info li,
+.partner-social-media li {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.partner-contact-info li i,
+.partner-social-media li i {
+  margin-right: 10px;
+  color: var(--action-color);
+  width: 20px;
+  text-align: center;
+}
+
+.partner-contact-info a,
+.partner-social-media a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.partner-contact-info a:hover,
+.partner-social-media a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.list-inline-item i {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+/* Mantendo as cores específicas para as marcas */
+.list-inline-item a:hover i.fa-facebook-f { color: #3b5998; }
+.list-inline-item a:hover i.fa-instagram { color: #e4405f; }
+.list-inline-item a:hover i.fa-linkedin-in { color: #0077b5; }
+.list-inline-item a:hover i.fa-twitter { color: #1da1f2; }
+
+/* RESPONSIVIDADE */
+@media (min-width: 992px) {
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .col-md-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .col-lg-6, .col-md-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+  .parceiros-overlay h1 {
+    font-size: 2.2rem;
+  }
+  .parceiros-overlay p {
+    font-size: 1rem;
+  }
+  .partner-name {
+    font-size: 1.5rem;
+  }
+  .parceiros-section {
+    padding: 30px 15px;
+  }
+}

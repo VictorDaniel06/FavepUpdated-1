@@ -1,0 +1,734 @@
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  overflow: hidden;
+  /* A cor de fundo do container é aplicada no .main-content agora */
+}
+
+/* ---------------------------------------------------- */
+/* CABEÇALHO DO DASHBOARD */
+/* ---------------------------------------------------- */
+.dashboard-header {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Merriweather', serif;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-logo-img { /* Logo no header */
+  height: 3.5rem; /* Define a altura da imagem. Ajuste este valor conforme necessário. */
+  width: auto;    /* Mantém a proporção da imagem. */
+}
+
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  white-space: nowrap;
+}
+
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #27ae60;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: none;
+}
+
+
+/* ---------------------------------------------------- */
+/* MENU LATERAL PRINCIPAL */
+/* ---------------------------------------------------- */
+.main-menu {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: #34495e;
+  color: white;
+  padding: 20px 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  z-index: 90;
+}
+
+.main-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.main-menu a:hover {
+  background-color: #2c3e50;
+}
+
+.main-menu .material-symbols-outlined {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.main-content-perfil {
+  padding: 25px;
+  background-color: #f5f7fa;
+  flex-grow: 1;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.botao-voltar {
+  margin: 1.5rem 0;
+}
+
+.botao-voltar a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease;
+}
+
+.botao-voltar a:hover {
+  color: #1976d2;
+}
+
+.container-perfil {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-perfil > h1 {
+  font-size: 2.5rem;
+  color: #2b2c34;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.profile-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.card-perfil {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+.card-perfil h2 {
+    color: #1a202c;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+
+.general-info {
+  background: #112d4e;
+  color: #ffffff;
+  flex: 2 1 500px;
+  min-width: 300px;
+}
+.general-info .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+}
+.general-info .card-header h2 {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: #ffffff;
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-photo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #34495e;
+}
+
+.general-info .edit-main-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.general-info .edit-main-btn:hover {
+  background-color: #2980b9;
+}
+.general-info .edit-main-btn:active {
+  transform: scale(0.97);
+}
+.general-info .edit-main-btn .fas {
+  margin-right: 6px;
+}
+
+.info-list p {
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.info-list strong {
+  color: #bdc3c7;
+  margin-right: 5px;
+}
+.info-list span {
+    color: #ffffff;
+}
+
+
+.help-box {
+  background: #3498db;
+  color: #ffffff;
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+.help-box h2 {
+  color: #ffffff;
+}
+.help-box p {
+  color: #ecf0f1;
+  line-height: 1.6;
+}
+.help-box p strong {
+  color: #ffffff;
+}
+
+.chat-btn {
+  background-color: white;
+  color: #2980b9;
+  border: none;
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+.chat-btn:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.additional-info {
+  background-color: #112d4e;
+  color: #ffffff;
+  flex-basis: 100%;
+}
+.additional-info p {
+    margin: 12px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.additional-info strong {
+    color: #bdc3c7;
+    margin-right: 5px;
+}
+.additional-info span {
+    color: #ffffff;
+}
+
+.additional-info h2 {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: #ffffff;
+}
+
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.plan-actions-container {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #34495e;
+  text-align: right;
+}
+
+.btn-manage-plan {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-manage-plan:hover {
+  background-color: #2980b9;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-manage-plan:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* ========= ESTILOS DO MODAL DE EDIÇÃO ========= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease-out, visibility 0.25s step-end 0.25s;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease-out, visibility 0s;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 500px;
+  transform: translateY(20px) scale(0.98);
+  opacity: 0;
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.25s ease-out, background-color 0.3s, color 0.3s;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  transition: border-color 0.3s;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #343a40;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.modal-header .close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #6c757d;
+  padding: 5px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+.modal-header .close-btn:hover {
+  color: #343a40;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: #495057;
+  transition: border-color 0.15s, box-shadow 0.15s, background-color 0.3s, color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #3498db;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+.validation-error {
+    margin-top: 5px;
+}
+.validation-error small {
+    color: #e74c3c;
+    font-size: 0.85rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+  margin-top: 25px;
+  transition: border-color 0.3s;
+}
+
+.btn-cancel, .btn-save {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-cancel {
+  background-color: #6c757d;
+  color: white;
+}
+.btn-cancel:hover {
+  background-color: #5a6268;
+}
+
+.btn-save {
+  background-color: #27ae60;
+  color: white;
+}
+.btn-save:hover {
+  background-color: #219653;
+}
+.btn-save:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+
+/* ESTILOS DO MODAL DE GERENCIAMENTO DE PLANO */
+.plan-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.plan-section h4 {
+  font-size: 1.3rem;
+  color: #343a40;
+  margin-top: 0;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+.plan-section p {
+  color: #495057;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: color 0.3s;
+}
+
+.section-divider {
+  border: 0;
+  height: 1px;
+  background-color: #e9ecef;
+  margin: 0 0 25px 0;
+  transition: background-color 0.3s;
+}
+
+.btn-cancel-subscription {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+.btn-cancel-subscription:hover {
+  background-color: #c0392b;
+}
+
+/* =================================================================== */
+/* ==== TEMA ESCURO PARA CONTEÚDO (SOBRESCRITAS DE ESTILO) ========= */
+/* =================================================================== */
+.content-dark-theme .main-content-perfil {
+  background-color: #1e2730;
+}
+.content-dark-theme .container-perfil > h1,
+.content-dark-theme .botao-voltar a {
+    color: #e0e6eb;
+}
+.content-dark-theme .card-perfil {
+  /* Os cards que já são escuros por design não precisam de mudança de fundo */
+  /* Apenas ajustamos a sombra para ter mais destaque no fundo escuro */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* MODAIS EM TEMA ESCURO */
+.content-dark-theme .modal-content {
+  background-color: #2c3e50;
+  color: #e0e6eb;
+}
+.content-dark-theme .modal-header {
+  border-bottom-color: #3e4c5b;
+}
+.content-dark-theme .modal-header h3 {
+  color: #f8f9fa;
+}
+.content-dark-theme .modal-header .close-btn {
+  color: #adb5bd;
+}
+.content-dark-theme .modal-header .close-btn:hover {
+  color: #f8f9fa;
+}
+.content-dark-theme .form-group label {
+  color: #ced4da;
+}
+.content-dark-theme .form-group input,
+.content-dark-theme .form-group select {
+  background-color: #1e2730;
+  border-color: #4a5568;
+  color: #e0e6eb;
+}
+.content-dark-theme .validation-error small {
+  color: #ff7667;
+}
+.content-dark-theme .modal-footer {
+  border-top-color: #3e4c5b;
+}
+.content-dark-theme .btn-cancel {
+  background-color: #495057;
+}
+.content-dark-theme .btn-cancel:hover {
+  background-color: #5a6268;
+}
+.content-dark-theme .btn-save {
+  background-color: #2ecc71;
+}
+.content-dark-theme .btn-save:hover {
+  background-color: #27ae60;
+}
+.content-dark-theme .btn-save:disabled {
+  background-color: #5a6268;
+}
+.content-dark-theme .plan-section h4 {
+  color: #f8f9fa;
+}
+.content-dark-theme .plan-section p {
+  color: #ced4da;
+}
+.content-dark-theme .section-divider {
+  background-color: #3e4c5b;
+}
+
+
+/* ========= RESPONSIVIDADE ========= */
+@media (min-width: 769px) {
+  .dashboard-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 78px 1fr;
+    grid-template-areas:
+      "header header"
+      "menu content";
+  }
+  .dashboard-header {
+    grid-area: header;
+  }
+  .main-menu {
+    grid-area: menu;
+    transform: translateX(0);
+    position: sticky;
+    top: 78px;
+    height: calc(100vh - 78px);
+  }
+  .main-content-perfil {
+    grid-area: content;
+  }
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 1.6rem;
+  }
+   .dashboard-header i {font-size: 1.6rem;}
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-menu {
+    position: fixed;
+    left: 0;
+    top: 78px;
+    bottom: 0;
+    width: 250px;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .main-menu.open {
+    transform: translateX(0);
+  }
+
+  .main-content-perfil {
+    padding: 20px;
+  }
+
+  .profile-section {
+    flex-direction: column;
+  }
+
+  .general-info,
+  .help-box,
+  .additional-info {
+    flex-basis: auto;
+    min-width: unset;
+  }
+
+  .profile-details {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .plan-actions-container {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    padding: 0.8rem 1rem;
+    height: auto;
+  }
+  .dashboard-header h1 {
+    font-size: 1.2rem;
+  }
+  .dashboard-header i {font-size: 1.2rem;}
+
+  .main-menu {
+    width: 220px;
+    top: 66px;
+    height: calc(100vh - 66px);
+  }
+
+  .main-content-perfil {
+    padding: 15px;
+  }
+
+  .container-perfil > h1 {
+    font-size: 1.8rem;
+  }
+
+  .card-perfil { padding: 20px; }
+  .card-perfil h2 { font-size: 1.2rem; margin-bottom: 15px; }
+
+  .info-list p,
+  .additional-info p {
+    font-size: 0.9rem;
+  }
+
+  .chat-btn, .btn-cancel-plan {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

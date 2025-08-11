@@ -1,0 +1,61 @@
+<app-menu-cima></app-menu-cima>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="row contact-grid">
+
+            <div class="col-lg-5 contact-info-column">
+                <div class="contact-info-card">
+                    <h2 class="card-title">Informações para Contato</h2>
+
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <p>Av. Dr. Flávio Henrique Lemos, 585 - Portal Itamaracá, Taquaritinga - SP, 15900-000</p>
+                    </div>
+
+                    <div class="contact-detail">
+                        <i class="fas fa-phone-alt contact-icon"></i>
+                        <a href="tel:+551632520000">+55 (16) 3252-0000</a>
+                    </div>
+
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <a href="mailto:contato&#64;favep.com.br">contato&#64;favep.com.br</a>
+                    </div>
+
+                    <h3 class="whatsapp-title">Atendimento via WhatsApp</h3>
+                    <p class="whatsapp-description">Converse diretamente com nossa equipe. Clique no botão abaixo para iniciar a conversa.</p>
+                    <button class="whatsapp-btn" (click)="sendWhatsApp($event)">
+                        <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-lg-6 contact-form-column">
+                <form class="contact-form-card" (submit)="sendEmail($event)">
+                    <h2 class="card-title form-header">Envie sua Mensagem</h2>
+                    
+                    <div class="form-group">
+                        <label for="nome-email">Seu Nome:</label>
+                        <input type="text" id="nome-email" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Seu Email:</label>
+                        <input type="email" id="email" placeholder="Digite seu email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem-email">Sua Mensagem:</label>
+                        <textarea id="mensagem-email" rows="6" placeholder="Explique o que está acontecendo..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

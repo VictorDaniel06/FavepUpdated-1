@@ -1,0 +1,399 @@
+/* ARQUIVO CORRIGIDO: Agora usando as variáveis de tema globais */
+
+/* PAINEL PRINCIPAL */
+.painel {
+  background: url("/assets/img/fundo.jpg") no-repeat center center/cover;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  text-align: center;
+  color: var(--text-on-dark-bg);
+  background: var(--bg-overlay);
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  font-family: 'Merriweather', serif;
+  font-weight: 500;
+}
+
+.credit {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+.btn {
+  text-decoration: none;
+  color: var(--text-on-dark-bg);
+  border: 2px solid var(--text-on-dark-bg);
+  padding: 10px 20px;
+  transition: background 0.3s, color 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+.btn:hover {
+  background: var(--text-on-dark-bg);
+  color: #333; /* Cor escura para o texto quando o fundo do botão é claro */
+}
+
+/* CARDS DE SERVIÇOS EXPLICATIVOS */
+.services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--bg-card);
+  padding: 20px;
+  width: 220px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--text-headings);
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.mais {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  color: var(--btn-text-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--btn-primary-bg);
+  border-radius: 5px;
+}
+
+.mais:hover {
+  text-decoration: underline;
+}
+
+/* SEÇÕES DE SERVIÇOS DETALHADOS */
+.servico, .servico1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+}
+
+.servico {
+  background-color: var(--bg-section-accent);
+}
+
+.servico1 {
+  background-color: var(--bg-main);
+}
+
+.texto {
+  max-width: 500px;
+  color: var(--text-primary);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.texto h1 {
+  color: var(--text-headings);
+  margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  text-align: center;
+}
+
+.texto1 {
+  max-width: 500px;
+  color: var(--text-on-accent-bg);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.texto1 h1 {
+  color: var(--text-on-accent-bg);
+  margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  text-align: center;
+}
+
+.texto ul, .texto1 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.imagem img {
+  max-width: 100%;
+  width: 650px;
+  height: auto;
+  border: 2px solid var(--border-color-img);
+  border-radius: 8px;
+}
+
+.parceiros-section {
+  padding: 50px 20px;
+  background-color: var(--bg-section-partners);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.parceiros-home-titulo {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.parceiros-home-titulo h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  color: var(--text-headings);
+  margin-bottom: 10px;
+}
+
+.parceiros-home-titulo p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+/* GRID E CARDs DE PARCEIROS */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col-lg-6, .col-md-12 {
+  padding: 0 15px;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.partner-card {
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* O card ocupa toda a coluna */
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.partner-card-header {
+  padding: 15px;
+  background-color: var(--border-color-img); /* Reutilizando variável para consistência */
+  text-align: center;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-logo {
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.partner-card-body {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--text-headings);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.partner-description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.partner-contact-info,
+.partner-social-media {
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+
+.partner-contact-info h4,
+.partner-social-media h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--action-color);
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.list-unstyled, .list-inline {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: .5rem;
+}
+
+.partner-contact-info ul li,
+.partner-social-media ul li {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.partner-contact-info ul li i,
+.partner-social-media ul li i {
+  margin-right: 10px;
+  color: var(--action-color);
+  width: 20px;
+  text-align: center;
+}
+
+.partner-contact-info a,
+.partner-social-media a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.partner-contact-info a:hover,
+.partner-social-media a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.partner-social-media .list-inline-item i {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.partner-social-media .list-inline-item a:hover i.fa-facebook-f { color: #3b5998; }
+.partner-social-media .list-inline-item a:hover i.fa-instagram { color: #e4405f; }
+.partner-social-media .list-inline-item a:hover i.fa-linkedin-in { color: #0077b5; }
+.partner-social-media .list-inline-item a:hover i.fa-twitter { color: #1da1f2; }
+
+.ver-todos-container {
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.btn-parceiros {
+  background-color: var(--btn-secondary-bg);
+  text-decoration: none;
+  color: var(--text-on-dark-bg);
+  padding: 12px 25px;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  border: 1px solid var(--btn-secondary-bg);
+  border-radius: 5px;
+}
+
+.btn-parceiros:hover {
+  background-color: var(--btn-secondary-hover-bg);
+  border-color: var(--btn-secondary-hover-bg);
+  color: white;
+}
+
+/* RESPONSIVIDADE */
+@media (min-width: 992px) {
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .col-lg-6, .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .servico, .servico1 {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

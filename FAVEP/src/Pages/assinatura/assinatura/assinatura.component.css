@@ -1,0 +1,127 @@
+/* Estilo para a seção de assinaturas */
+#assinatura {
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--text-headings); /* Usa a variável global para títulos */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 45px;
+  margin-top: 40px;
+}
+
+/* Container para os cards de planos */
+.plans-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 1550px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+.plan-card {
+  flex: 0 1 250px;
+  max-height: 380px;
+  min-width: 230px;
+  background: var(--bg-card); /* Usa a variável de fundo do card */
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color); /* Usa a variável de sombra */
+  border: 1px solid var(--border-color); /* Usa a variável de borda */
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              border-color 0.3s ease,
+              background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Estilo de hover geral para os cards */
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--shadow-color); /* Sombra mais pronunciada no hover */
+  border-color: var(--action-color); /* Usa a cor de ação na borda */
+}
+
+.plan-card h3 {
+  font-size: 25px;
+  margin-bottom: 0.8rem;
+  color: var(--text-headings); /* Título do card */
+  transition: color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.plan-card:hover h3 {
+  color: var(--action-color); /* Cor de ação no hover */
+}
+
+.plan-card .price {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--action-color); /* Cor de ação para o preço */
+  margin-bottom: 1rem;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.plan-card:hover .price {
+  color: var(--link-hover-color); /* Cor de hover para o preço */
+}
+
+.plan-card .period {
+  font-size: 0.9rem;
+  color: var(--text-primary); /* Cor de texto primária */
+  display: block;
+  margin-top: 3px;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.plan-card ul li {
+  margin: 10px 0;
+  padding-left: 22px;
+  position: relative;
+  color: var(--text-primary); /* Cor de texto primária */
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+.plan-card ul li:before {
+  content: "✓";
+  color: var(--action-color); /* Cor de ação para o ícone de check */
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.btn-assinar {
+  background-color: var(--action-color); /* Cor de ação para o botão */
+  color: var(--btn-text-color); /* Cor de texto do botão */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 80%;
+  align-self: center;
+  margin-top: auto;
+}
+
+.btn-assinar:hover {
+  background-color: var(--link-hover-color); /* Cor de fundo no hover */
+  transform: scale(1.05);
+}
