@@ -64,6 +64,18 @@
           </div>
         </div>
       </div>
+      
+          <div class="subscription-section card-perfil">
+        <div class="card-header">
+          <h2>Plano de Assinatura</h2>
+        </div>
+        <div class="subscription-details">
+          <p>Seu plano atual é:</p>
+          <strong class="current-plan">{{ usuario.plano || 'Nenhum' }}</strong>
+          <button class="change-plan-btn" routerLink="/home"> <i class="fas fa-exchange-alt"></i> Trocar de Plano
+          </button>
+        </div>
+      </div>
     </div>
   </main>
 

@@ -9,6 +9,7 @@ export interface Usuario {
   telefone?: string;
   fotoPerfil?: string;
   senha: string;
+  plano?: string;
 }
 
 export interface Propriedade {
