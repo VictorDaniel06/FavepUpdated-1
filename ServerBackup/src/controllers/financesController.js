@@ -1,6 +1,5 @@
-// analise/back/src/controllers/financesController.js
-
 const prisma = require('../lib/prisma');
+const { PrismaClient } = require('@prisma/client');
 
 module.exports = {
   // # getAllFinanceiros - CORRIGIDO
